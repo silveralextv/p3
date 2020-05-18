@@ -1,0 +1,73 @@
+/*General*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #002f6c;
+    color: #fee900;
+}
+
+/*Fin General*/
+
+/*Titre*/
+
+div#title {
+    text-align: center;
+}
+
+div#title>h1 {
+    margin: 0;
+    padding: .5%;
+    font-size: 48px;
+}
+
+/*Fin Titre*/
+
+/*Slider*/
+
+section#slider {
+    display: flex;
+    justify-content: center;
+}
+
+section#slider>div#overlay>ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+section#slider>div#overlay>ul>li.slider-items,
+section#slider>div#overlay>ul>li.slider-items>img {
+    width: 500px;
+}
+
+section#slider>div#overlay {
+    position: relative;
+}
+
+section#slider>div#overlay>i {
+    position: absolute;
+    padding: 20px 5px 20px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 2em;
+}
+
+section#slider>div#overlay>i.fa-angle-left {
+    left: 0;
+    border-radius: 0 75px 75px 0;
+}
+
+section#slider>div#overlay>i.fa-angle-right {
+    right: 0;
+    border-radius: 75px 0 0 75px;
+}
+
+.middle-items {
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+/*Fin Slider*/
