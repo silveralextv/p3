@@ -70,4 +70,12 @@ section#slider>div#overlay>i.fa-angle-right {
     transform: translateY(-50%)
 }
 
+.display-none {
+    display: none;
+}
+
+.display-flex {
+    display: flex;
+    width: 500px;
+}
 /*Fin Slider*/
