@@ -29,7 +29,19 @@ function prev() {
 
 container.querySelector(".next").addEventListener("click", next);
 container.querySelector(".prev").addEventListener("click", prev);
+container.querySelector(".pause").addEventListener("click", pause);
+container.querySelector(".start").addEventListener("click", start);
 
 refresh();
 
-setInterval(next, 5000);
+let changeImage = setInterval(next, 5000);
+
+function pause() {
+    clearInterval(changeImage);
+    container.querySelector(".pause").className = "start";
+};
+
+function start() {
+    changeImage = setInterval(next, 5000);
+    container.querySelector(".start").className = "pause";
+};

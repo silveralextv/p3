@@ -79,4 +79,9 @@ section#slider>div#overlay>i.fa-angle-right {
     width: 500px;
     height: 500px;;
 }
+
+section#slider>button {
+    display: block;
+    height: 25px;
+}
 /*Fin Slider*/
