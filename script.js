@@ -1,9 +1,9 @@
 let i = 0;
+let play = true;
 const container = document.getElementById("slider");
 const slides = container.querySelectorAll(".slider-items");
 
 function refresh() {
-
     for (slide of slides) {
         slide.className = "slider-items display-none";
     };
@@ -29,19 +29,21 @@ function prev() {
 
 container.querySelector(".next").addEventListener("click", next);
 container.querySelector(".prev").addEventListener("click", prev);
-container.querySelector(".pause").addEventListener("click", pause);
-container.querySelector(".start").addEventListener("click", start);
+const btn = container.querySelector(".btn");
+
+btn.addEventListener("click", playPause);
 
 refresh();
 
-let changeImage = setInterval(next, 5000);
+let changeImage = setInterval(next, 500);
 
-function pause() {
-    clearInterval(changeImage);
-    container.querySelector(".pause").className = "start";
-};
-
-function start() {
-    changeImage = setInterval(next, 5000);
-    container.querySelector(".start").className = "pause";
+function playPause() {
+    if(play){
+        clearInterval(changeImage);
+        btn.className = "btn play";
+    } else {
+        changeImage = setInterval(next, 500);
+        btn.className = "btn pause";
+    };
+    play = !play;
 };
