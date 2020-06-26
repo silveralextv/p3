@@ -31,6 +31,7 @@ div#title>h1 {
 section#slider {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 section#slider>div#overlay>ul {
@@ -51,7 +52,7 @@ section#slider>div#overlay {
 section#slider>div#overlay>i {
     position: absolute;
     padding: 20px 5px 20px 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     font-size: 2em;
 }
 
@@ -81,7 +82,19 @@ section#slider>div#overlay>i.fa-angle-right {
 }
 
 section#slider>button {
-    display: block;
-    height: 25px;
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    background-color: #fee900;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: bold;
+    color: #002f6c;
+    font-size: 24px;
 }
 /*Fin Slider*/
+
+#map {
+    height: 180px;
+}
