@@ -74,8 +74,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'sk.eyJ1Ijoic2lsdmVyYWxleHR2IiwiYSI6ImNrYzM2eXdnOTI0bmsyeW80emVvMGd5aHIifQ.JPNW0aI1E6eDH6K90Pvt9w'
 }).addTo(mymap);
 
-let marker = L.marker([51.5, -0.09]).addTo(mymap);
-
 const contractName = 'Lyon';
 
 const apiKey = '95095e2132411b499e70e8bd5b06f24d7e925d41';
@@ -94,13 +92,13 @@ function ajaxGet(url, callback) {
     request.send();
 };
 
-
 console.log(url);
 
 ajaxGet(url, (response) => {
     console.log(response);
-});
 
-for each(let item in ajaxGet(url, (response))){
-    console.log(item);
-};
+    let pointers = response;
+    for (let item of pointers) {
+
+    };
+});
