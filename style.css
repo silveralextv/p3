@@ -1,3 +1,8 @@
+@font-face {
+    src: url("assets/fonts/Roboto/Roboto-Regular.ttf");
+    font-family: Roboto;
+}
+
 /*General*/
 * {
     box-sizing: border-box;
@@ -8,6 +13,7 @@ body {
     padding: 0;
     background-color: #002f6c;
     color: #fee900;
+    font-family: Roboto;
 }
 
 /*Fin General*/
@@ -18,10 +24,10 @@ div#title {
     text-align: center;
 }
 
-div#title>h1 {
+h1 {
     margin: 0;
     padding: .5%;
-    font-size: 48px;
+    font-size: 32px;
 }
 
 /*Fin Titre*/
@@ -42,6 +48,7 @@ section#slider>div#overlay>ul {
 
 section#slider>div#overlay>ul>li.slider-items,
 section#slider>div#overlay>ul>li.slider-items>img {
+    height: 350px;
     width: 500px;
 }
 
@@ -95,7 +102,24 @@ section#slider>button {
 }
 /*Fin Slider*/
 
-#mapid {
+div.booking {
     margin-top: 50px;
+    display: flex;
+}
+
+#mapid {
     height: 300px;
+    width: 50%;
+}
+
+div#modal {
+    z-index: 99;
+    width: 50%;
+    height: 300px;
+    padding-left: 20px;
+    background-color: #00256C;
+}
+
+div#modal>form>h1 {
+    padding: 0;
 }

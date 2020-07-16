@@ -63,7 +63,7 @@ const diapo = new Diapo("slider");
 
 /*Map*/
 
-let mymap = L.map('mapid').setView([51.505, -0.09], 13);
+let mymap = L.map('mapid').setView([45.75, 4.85], 13);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -96,9 +96,32 @@ console.log(url);
 
 ajaxGet(url, (response) => {
     console.log(response);
-
     let pointers = response;
-    for (let item of pointers) {
 
+    for (let item of pointers) {
+        if (item.banking == true || item.status == "OPEN") {
+            let name = item.name.replace(item.number + " - ", '');
+            let marker = L.marker([item.position.lat, item.position.lng]).addTo(mymap);
+            marker.bindPopup("<b>" + name + "</b> <br>" + item.address);
+            marker.on('click', () => {
+                document.getElementById("modal").innerHTML = `
+                <p>Adresse : <b>` + item.address + `</b></p>
+                <p><b>` + item.available_bike_stands + `</b> places</p>
+                <p><b>` + item.available_bikes + `</b> vélos disponibles</p>
+                <form>
+                
+                <h1>Réserver</h1>
+            
+                <label name="last-name">Nom : </label>
+                <input type="text" name="last-name">
+            
+                <label name="first-name">Prénom : </label>
+                <input type="text" name="first-name">
+
+                <button>Réserver</button>
+                </form>
+                `;
+            });
+        };
     };
 });
