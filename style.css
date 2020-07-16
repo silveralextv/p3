@@ -95,6 +95,7 @@ section#slider>button {
 }
 /*Fin Slider*/
 
-#map {
-    height: 180px;
+#mapid {
+    margin-top: 50px;
+    height: 300px;
 }
