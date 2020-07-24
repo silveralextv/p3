@@ -125,3 +125,12 @@ ajaxGet(url, (response) => {
         };
     };
 });
+
+var canvas = document.getElementById('signature');
+var ctx = canvas.getContext('2d');
+ctx.fillStyle = 'white';
+ctx.fillRect(0, 0, 300, 200);
+ctx.beginPath();
+ctx.moveTo(50, 50);
+ctx.lineTo(100, 100);
+ctx.stroke();
