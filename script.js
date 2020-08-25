@@ -137,3 +137,4 @@ ctx.stroke();
 
 let mouseCoords = addEventListener(ctx, 'mousemove',);
 console.log(mouseCoords);
+/*Comment*/
