@@ -104,6 +104,7 @@ ajaxGet(url, (response) => {
             let marker = L.marker([item.position.lat, item.position.lng]).addTo(mymap);
             marker.bindPopup("<b>" + name + "</b> <br>" + item.address);
             marker.on('click', () => {
+                console.log("click");
                 document.getElementById("modal").innerHTML = `
                 <p>Adresse : <b>` + item.address + `</b></p>
                 <p><b>` + item.available_bike_stands + `</b> places</p>
@@ -120,49 +121,12 @@ ajaxGet(url, (response) => {
 
                 <button>Réserver</button>
                 </form>
+                <canvas id="signature">
+                    Get a better browser, bro.
+                </canvas>
                 `;
+                initCanvas();
             });
         };
     };
 });
-
-/*var canvas = document.getElementById('signature');
-var ctx = canvas.getContext('2d');
-ctx.fillStyle = 'white';
-ctx.fillRect(0, 0, 300, 200);
-ctx.beginPath();
-ctx.moveTo(50, 50);
-ctx.lineTo(100, 100);
-ctx.stroke();
-
-let mouseCoords = addEventListener(ctx, 'mousemove',);
-console.log(mouseCoords);
-
-var signaturePad = new SignaturePad(document.getElementById('signature'), {
-    backgroundColor: 'rgba(255, 255, 255, 0)',
-    penColor: 'rgb(0, 0, 0)'
-});
-
-var signature = {
-    canvas: null,
-    clearButton: null,
-    resizeCanvas: function resizeCanvas() {
-        // When zoomed out to less than 100%, for some very strange reason,
-        // some browsers report devicePixelRatio as less than 1
-        // and only part of the canvas is cleared then.
-        var ratio = Math.max(window.devicePixelRatio || 1, 1);
-        this.canvas.width = canvas.offsetWidth * ratio;
-        this.canvas.height = canvas.offsetHeight * ratio;
-        this.canvas.getContext("2d").scale(ratio, ratio);
-    },
-    init: function init() {
-        this.canvas = document.querySelector(".signature-pad");
-        this.clearButton = document.getElementById('clear');
-        signaturePad = new SignaturePad(this.canvas);
-        this.clearButton.addEventListener('click', function (event) {
-            signaturePad.clear();
-        });
-    }
-};
-
-signature.init();*/
