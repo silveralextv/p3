@@ -119,11 +119,13 @@ ajaxGet(url, (response) => {
                 <label name="first-name">Prénom : </label>
                 <input type="text" name="first-name">
 
-                <button>Réserver</button>
-                </form>
-                <canvas id="signature">
+                
+                <canvas id="signature" height="100px">
                     Get a better browser, bro.
                 </canvas>
+
+                <button>Réserver</button>
+                </form>
                 `;
                 initCanvas();
             });
