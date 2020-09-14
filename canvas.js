@@ -11,7 +11,6 @@ function initCanvas() {
     })();
 
     var canvas = document.getElementById("signature");
-    console.log("canvas");
     var ctx = canvas.getContext("2d");
     ctx.strokeStyle = "#222222";
     ctx.lineWidth = 4;

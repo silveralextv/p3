@@ -1,3 +1,4 @@
+const date = new Date();
 /*Diapo*/
 class Diapo {
     constructor(container) {
@@ -104,7 +105,6 @@ ajaxGet(url, (response) => {
             let marker = L.marker([item.position.lat, item.position.lng]).addTo(mymap);
             marker.bindPopup("<b>" + name + "</b> <br>" + item.address);
             marker.on('click', () => {
-                console.log("click");
                 document.getElementById("modal").innerHTML = `
                 <p>Adresse : <b>` + item.address + `</b></p>
                 <p><b>` + item.available_bike_stands + `</b> places</p>
@@ -113,22 +113,31 @@ ajaxGet(url, (response) => {
                 
                 <h1>Réserver</h1>
             
-                <label name="last-name">Nom : </label>
-                <input type="text" name="last-name">
+                <label name="lastname">Nom : </label>
+                <input type="text" name="lastname" id="lastname">
             
-                <label name="first-name">Prénom : </label>
-                <input type="text" name="first-name">
+                <label name="firstname">Prénom : </label>
+                <input type="text" name="firstname" id="firstname">
 
                 
                 <canvas id="signature" height="100px">
                     Get a better browser, bro.
                 </canvas>
 
-                <button>Réserver</button>
+                <a href="" id="book">Réserver</a>
                 </form>
                 `;
                 initCanvas();
+                initBook();
             });
         };
     };
 });
+if (localStorage.getItem("lastName") === undefined && localStorage.getItem("bookHour") === undefined && localStorage.getItem("firstName") === undefined) {
+
+} else {
+    let lastName = localStorage.getItem("lastName");
+    let firstName = localStorage.getItem("firstName");
+    let bookHour = localStorage.getItem("bookHour");
+    console.log(lastName, firstName, bookHour);
+};
