@@ -161,14 +161,15 @@ ajaxGet(url, (response) => {
     }
   }
 });
-if (
-  localStorage.getItem("lastName") === null &&
-  localStorage.getItem("bookHour") === null &&
-  localStorage.getItem("firstName") === null
-) {
+
+if (localStorage.getItem("bookHour") > new Date().getTime){
+  
 } else {
-  let lastName = localStorage.getItem("lastName");
-  let firstName = localStorage.getItem("firstName");
-  let bookHour = localStorage.getItem("bookHour");
-  console.log(lastName, firstName, bookHour);
-}
+
+};
+const end = Math.floor(Date.now() / 1000) + 20 * 60;
+const now = Math.floor(Date.now() / 1000);
+let total = end - now
+  const minutes = Math.floor(total / 60);
+  const secondes = ("0" + total % 60).substr(-2);
+  console.log(minutes, secondes);

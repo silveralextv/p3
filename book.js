@@ -1,10 +1,9 @@
 function initBook() {
     document.querySelector("#book").addEventListener("click", () => {
-        const end = new Date();
-        end.setMinutes(end.getMinutes + 20);
+        const end = date.now();
         console.log(end);
-        let bookHour = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-        localStorage.setItem("bookHour", bookHour);
+        //end.setMinutes(end.getMinutes + 20);
+        localStorage.setItem("bookHour", end);
         let lastName = document.getElementById("lastname").value;
         localStorage.setItem("lastName", lastName);
         let firstName = document.querySelector("#firstname").value;
