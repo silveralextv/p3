@@ -173,3 +173,7 @@ let total = end - now
   const minutes = Math.floor(total / 60);
   const secondes = ("0" + total % 60).substr(-2);
   console.log(minutes, secondes);
+
+  if (isset(localStorage.getItem("bookHour"))){
+    setInterval()
+  }

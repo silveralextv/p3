@@ -10,19 +10,19 @@ function initCanvas() {
             };
     })();
 
-    var canvas = document.getElementById("signature");
-    var ctx = canvas.getContext("2d");
+    let canvas = document.getElementById("signature");
+    let ctx = canvas.getContext("2d");
     ctx.strokeStyle = "#222222";
     ctx.lineWidth = 4;
     ctx.fillStyle = "#FFFFFF";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    var drawing = false;
-    var mousePos = {
+    let drawing = false;
+    let mousePos = {
         x: 0,
         y: 0
     };
-    var lastPos = mousePos;
+    let lastPos = mousePos;
 
     canvas.addEventListener("mousedown", function (e) {
         drawing = true;
@@ -38,7 +38,7 @@ function initCanvas() {
     }, false);
 
     function getMousePos(canvasDom, mouseEvent) {
-        var rect = canvasDom.getBoundingClientRect();
+        let rect = canvasDom.getBoundingClientRect();
         return {
             x: mouseEvent.clientX - rect.left,
             y: mouseEvent.clientY - rect.top
