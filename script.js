@@ -20,5 +20,5 @@ const secondes = ("0" + (total % 60)).substr(-2);
 console.log(minutes, secondes);
 
 if (isset(localStorage.getItem("bookHour"))) {
-  setInterval();
+  const timer = new Timer();
 }
