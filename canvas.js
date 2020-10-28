@@ -1,66 +1,59 @@
-function initCanvas() {
-    window.requestAnimFrame = (function (callback) {
-        return window.requestAnimationFrame ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame ||
-            window.oRequestAnimationFrame ||
-            window.msRequestAnimaitonFrame ||
-            function (callback) {
-                window.setTimeout(callback, 1000 / 60);
-            };
-    })();
-
-    let canvas = document.getElementById("signature");
-    let ctx = canvas.getContext("2d");
+class Signature {
+  constructor() {
+    this.canvas = document.getElementById("signature");
+    let ctx = this.canvas.getContext("2d");
     ctx.strokeStyle = "#222222";
     ctx.lineWidth = 4;
     ctx.fillStyle = "#FFFFFF";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
-    let drawing = false;
-    let mousePos = {
-        x: 0,
-        y: 0
+    this.drawing = false;
+    this.mousePos = {
+      x: 0,
+      y: 0,
     };
-    let lastPos = mousePos;
+    this.lastPos = this.mousePos;
 
-    canvas.addEventListener("mousedown", function (e) {
-        drawing = true;
-        lastPos = getMousePos(canvas, e);
-    }, false);
+    this.canvas.addEventListener(
+      "mousedown",
+      (e) => {
+        this.drawing = true;
+        this.lastPos = this.getMousePos(this.canvas, e);
+      },
+      false
+    );
 
-    canvas.addEventListener("mouseup", function (e) {
-        drawing = false;
-    }, false);
+    this.canvas.addEventListener(
+      "mouseup",
+      (e) => {
+        this.drawing = false;
+      },
+      false
+    );
 
-    canvas.addEventListener("mousemove", function (e) {
-        mousePos = getMousePos(canvas, e);
-    }, false);
+    this.canvas.addEventListener(
+      "mousemove",
+      (e) => {
+        this.mousePos = this.getMousePos(this.canvas, e);
+      },
+      false
+    );
+  }
 
-    function getMousePos(canvasDom, mouseEvent) {
-        let rect = canvasDom.getBoundingClientRect();
-        return {
-            x: mouseEvent.clientX - rect.left,
-            y: mouseEvent.clientY - rect.top
-        }
+  getMousePos(canvasDom, mouseEvent) {
+    this.rect = canvasDom.getBoundingClientRect();
+    return {
+      x: mouseEvent.clientX - this.rect.left,
+      y: mouseEvent.clientY - this.rect.top,
+    };
+  }
+
+  renderCanvas() {
+    if (this.drawing) {
+      this.ctx.moveTo(this.lastPos.x, this.lastPos.y);
+      this.ctx.lineTo(this.mousePos.x, this.mousePos.y);
+      this.ctx.stroke();
+      this.lastPos = this.mousePos;
     }
-
-    function renderCanvas() {
-        if (drawing) {
-            ctx.moveTo(lastPos.x, lastPos.y);
-            ctx.lineTo(mousePos.x, mousePos.y);
-            ctx.stroke();
-            lastPos = mousePos;
-        }
-    }
-
-    (function drawLoop() {
-        requestAnimFrame(drawLoop);
-        renderCanvas();
-    })();
-
-    function clearCanvas() {
-        canvas.width = canvas.width;
-    }
-
-};
+  }
+}
