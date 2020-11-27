@@ -1,59 +1,52 @@
 class Signature {
   constructor() {
     this.canvas = document.getElementById("signature");
-    let ctx = this.canvas.getContext("2d");
-    ctx.strokeStyle = "#222222";
-    ctx.lineWidth = 4;
-    ctx.fillStyle = "#FFFFFF";
-    ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
-    this.drawing = false;
-    this.mousePos = {
-      x: 0,
-      y: 0,
+    this.ctx = this.canvas.getContext('2d');
+    this.ctx.strokeStyle = '#000000';
+    this.ctx.lineWidth = 3;
+    this.draw = false;
+    this.mousePosition = {
+        x: 0,
+        y: 0
     };
-    this.lastPos = this.mousePos;
+    this.lastPosition = this.mousePosition;
+    this.canvas.height = 100;
+  };
 
-    this.canvas.addEventListener(
-      "mousedown",
-      (e) => {
-        this.drawing = true;
-        this.lastPos = this.getMousePos(this.canvas, e);
-      },
-      false
-    );
+  events(){
+    let self = this;
+    this.canvas.addEventListener("mousedown", function (e) {
+      self.draw = true;
+      self.lastPosition = self.getMposition(e);
+    });
 
-    this.canvas.addEventListener(
-      "mouseup",
-      (e) => {
-        this.drawing = false;
-      },
-      false
-    );
+    this.canvas.addEventListener("mousemove", function (e) {
+      self.mousePosition = self.getMposition(e);
+      self.canvasResult();
+    });
 
-    this.canvas.addEventListener(
-      "mousemove",
-      (e) => {
-        this.mousePos = this.getMousePos(this.canvas, e);
-      },
-      false
-    );
-  }
+    document.addEventListener("mouseup", function (e) {
+      self.draw = false;
+    });
+  };
 
-  getMousePos(canvasDom, mouseEvent) {
-    this.rect = canvasDom.getBoundingClientRect();
-    return {
-      x: mouseEvent.clientX - this.rect.left,
-      y: mouseEvent.clientY - this.rect.top,
-    };
-  }
-
-  renderCanvas() {
-    if (this.drawing) {
-      this.ctx.moveTo(this.lastPos.x, this.lastPos.y);
-      this.ctx.lineTo(this.mousePos.x, this.mousePos.y);
-      this.ctx.stroke();
-      this.lastPos = this.mousePos;
+  getMposition(mouseEvent) {
+    if (this.draw) {
+      let oRect = this.canvas.getBoundingClientRect();
+      return {
+        x: mouseEvent.clientX - oRect.left,
+        y: mouseEvent.clientY - oRect.top
+      };
     }
-  }
-}
+  };
+
+  canvasResult() {
+    if (this.draw) {
+      this.ctx.beginPath();
+      this.ctx.moveTo(this.lastPosition.x, this.lastPosition.y);
+      this.ctx.lineTo(this.mousePosition.x, this.mousePosition.y);
+      this.ctx.stroke();
+      this.lastPosition = this.mousePosition;
+    }
+  };
+};
