@@ -1,62 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Carte interactive de location de vélos</title>
-    <meta author="Alexandre Leclerc" />
-    <script src="https://kit.fontawesome.com/ed2185f76f.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==""
+
+<head>
+  <meta charset="utf-8" />
+  <title>Carte interactive de location de vélos</title>
+  <meta author="Alexandre Leclerc" />
+  <script src="https://kit.fontawesome.com/ed2185f76f.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==""
     crossorigin="" />
     <script
-      src=" https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-      crossorigin=""
-    ></script>
-  </head>
+      src=" https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin="">
+  </script>
+</head>
 
-  <body>
-    <!--Titre-->
-    <div id=" title">
-      <h1>Carte interactive de location de vélos - Lyon</h1>
+<body>
+  <!--Titre-->
+  <div id=" title">
+    <h1>Carte interactive de location de vélos - Lyon</h1>
+  </div>
+  <!--Fin Titre-->
+
+  <!--Slider-->
+  <section id="slider">
+    <!--Overlay-->
+
+    <!--Images du Slider-->
+    <div id="overlay">
+      <ul>
+        <li class="slider-items" id="item1">
+          <img src="assets/images/cvelo.jpg" />
+        </li>
+        <li class="slider-items" id="item2">
+          <img src="assets/images/cvelo2.jpg" />
+        </li>
+        <li class="slider-items" id="item3">
+          <img src="assets/images/cvelo3.jpg" />
+        </li>
+      </ul>
+      <!--Fin Images du Slider-->
+      <i class="fa fa-angle-left middle-items prev"></i>
+      <i class="fa fa-angle-right middle-items next"></i>
     </div>
-    <!--Fin Titre-->
+    <button class="pause btn">Ⅱ</button>
+    <!--Fin Overlay-->
+  </section>
+  <!--Fin Slider-->
+  <div class="booking">
+    <div id="mapid"></div>
+    <div id="modal"></div>
+  </div>
+  <script src="diapo.js"></script>
+  <script src="book.js"></script>
+  <script src="canvas.js"></script>
+  <script src="map.js"></script>
+  <script src="script.js"></script>
+</body>
 
-    <!--Slider-->
-    <section id="slider">
-      <!--Overlay-->
-
-      <!--Images du Slider-->
-      <div id="overlay">
-        <ul>
-          <li class="slider-items" id="item1">
-            <img src="assets/images/cvelo.jpg" />
-          </li>
-          <li class="slider-items" id="item2">
-            <img src="assets/images/cvelo2.jpg" />
-          </li>
-          <li class="slider-items" id="item3">
-            <img src="assets/images/cvelo3.jpg" />
-          </li>
-        </ul>
-        <!--Fin Images du Slider-->
-        <i class="fa fa-angle-left middle-items prev"></i>
-        <i class="fa fa-angle-right middle-items next"></i>
-      </div>
-      <button class="pause btn">Ⅱ</button>
-      <!--Fin Overlay-->
-    </section>
-    <!--Fin Slider-->
-    <div class="booking">
-      <div id="mapid"></div>
-      <div id="modal"></div>
-    </div>
-    <script src="diapo.js"></script>
-    <script src="book.js"></script>
-    <script src="canvas.js"></script>
-    <script src="map.js"></script>
-    <script src="script.js"></script>
-  </body>
 </html>
