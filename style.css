@@ -123,3 +123,10 @@ div#modal {
 div#modal>form>h1 {
     padding: 0;
 }
+
+canvas {
+    z-index: 200;
+    border: 1px solid black;
+    background-color: white;
+    margin: 0;
+}

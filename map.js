@@ -48,11 +48,11 @@ class Carte {
                 <input type="text" name="lastname" id="lastname">
                 <label name="firstname">Prénom : </label>
                 <input type="text" name="firstname" id="firstname">
-                <a href="" id="book">Réserver</a>
+                <canvas id="signature" width="200" height="100"></canvas>
+                <a href="#" id="book">Réserver</a>
                 </form>
                 `;
-            new Signature();
-            initBook();
+            let canvas = new Signature("#signature")
           });
         }
       }
