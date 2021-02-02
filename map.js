@@ -43,16 +43,28 @@ class Carte {
               item.available_bikes +
               `</b> vélos disponibles</p>
                 <form>
-                <h1>Réserver</h1>
-                <label name="lastname">Nom : </label>
-                <input type="text" name="lastname" id="lastname">
-                <label name="firstname">Prénom : </label>
-                <input type="text" name="firstname" id="firstname">
-                <canvas id="signature" width="200" height="100"></canvas>
-                <a href="#" id="book">Réserver</a>
+                  <h1>Réserver</h1>
+                  <label name="lastname">Nom : </label>
+                  <input type="text" name="lastname" id="lastname">
+
+                  <label name="firstname">Prénom : </label>
+                  <input type="text" name="firstname" id="firstname">
+
+                  <canvas id="signature" width="200" height="100"></canvas>
+                  
+                  <a href="#" id="clear">Effacer</a>
+                  <a href="#" id="book">Réserver</a>
                 </form>
                 `;
-            let canvas = new Signature("#signature")
+            let canvas = new Signature("#signature");
+            document.querySelector("#clear").addEventListener("click", (e) => {
+              e.preventDefault()
+              canvas.clear();
+            })
+            document.querySelector("#book").addEventListener("click", (e) => {
+              e.preventDefault()
+              localStorage.setItem('signature', canvas.generateImg())
+            })
           });
         }
       }
