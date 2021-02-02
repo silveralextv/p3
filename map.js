@@ -4,7 +4,7 @@ class Carte {
     this.apiKey = "95095e2132411b499e70e8bd5b06f24d7e925d41";
     this.modal = modal;
     this.mapInit();
-    console.log("Yep");
+    console.log("La carte est initialisée");
   }
 
   mapInit() {
@@ -48,7 +48,6 @@ class Carte {
                 <input type="text" name="lastname" id="lastname">
                 <label name="firstname">Prénom : </label>
                 <input type="text" name="firstname" id="firstname">
-                <canvas id="signature" height="100px">Get a better browser, bro.</canvas>
                 <a href="" id="book">Réserver</a>
                 </form>
                 `;
