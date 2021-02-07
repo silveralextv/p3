@@ -5,6 +5,6 @@ window.onload = () => {
   //Map
   const map = new Carte("modal");
 
-  //Book
-  const book = new Book();
+  //Timer
+  const timer = new Timer("#timer")
 }

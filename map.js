@@ -45,10 +45,10 @@ class Carte {
                 <form>
                   <h1>Réserver</h1>
                   <label name="lastname">Nom : </label>
-                  <input type="text" name="lastname" id="lastname">
+                  <input type="text" name="lastname" id="lastname" required pattern="^[a-zA-Z\- éèï]+$">
 
                   <label name="firstname">Prénom : </label>
-                  <input type="text" name="firstname" id="firstname">
+                  <input type="text" name="firstname" id="firstname" required pattern="^[a-zA-Z\- éèï]+$">
 
                   <canvas id="signature" width="200" height="100"></canvas>
                   
@@ -56,7 +56,9 @@ class Carte {
                   <a href="#" id="book">Réserver</a>
                 </form>
                 `;
-            let canvas = new Signature("#signature");
+            const canvas = new Signature("#signature");
+            //Book
+            const book = new Book();
             document.querySelector("#clear").addEventListener("click", (e) => {
               e.preventDefault()
               canvas.clear();

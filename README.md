@@ -1,4 +1,4 @@
-# Projet 3 OpenClassrooms
+# Projet 3 DWJ OpenClassrooms
 
 Ce projet a pour but d'apprendre les bases de Javascript et l'utilisation d'API Rest.
 
