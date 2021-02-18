@@ -1,11 +1,21 @@
 class Book{
     constructor(){
         this.book = document.querySelector("#book")
-        this.book.addEventListener("click", () =>{
-            this.end = Math.floor(Date.now() / 1000) + 20
-            sessionStorage.setItem('end', this.end)
-            new Timer("#timer")
-        })
+        this.bookClick()
+    }
+
+    bookClick() {
+        if (sessionStorage.getItem('end')){
+            this.book.addEventListener("click", () =>{
+                alert("Vous avez déjà un vélo de réserver.")
+            })
+        }else{
+            this.book.addEventListener("click", () =>{
+                this.end = Math.floor(Date.now() / 1000) + 20 * 60
+                sessionStorage.setItem('end', this.end)
+                new Timer("#timer")
+            })
+        }
     }
 }
 

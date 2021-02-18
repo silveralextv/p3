@@ -50,9 +50,10 @@ class Carte {
                   <label name="firstname">Prénom : </label>
                   <input type="text" name="firstname" id="firstname" required pattern="^[a-zA-Z\- éèï]+$">
 
-                  <canvas id="signature" width="200" height="100"></canvas>
+                  <label name="signature">Signature : </label>
+                  <canvas id="signature" width="200" height="100" name="signature"></canvas>
                   
-                  <a href="#" id="clear">Effacer</a>
+                  <a href="#" id="clear">Effacer la signature</a>
                   <a href="#" id="book">Réserver</a>
                 </form>
                 `;

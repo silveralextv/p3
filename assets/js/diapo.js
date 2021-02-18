@@ -17,7 +17,7 @@ class Diapo {
     this.refresh();
     this.changeImage = setInterval(() => {
       this.next();
-    }, 1000);
+    }, 10000);
     this.keys();
   }
 
@@ -61,12 +61,12 @@ class Diapo {
   playPause() {
     if (this.play) {
       clearInterval(this.changeImage);
-      this.btn.className = "btn play";
+      this.btn.className = "las la-pause btn play";
     } else {
       this.changeImage = setInterval(() => {
         this.next();
-      }, 1000);
-      this.btn.className = "btn pause";
+      }, 10000);
+      this.btn.className = "las la-pause btn pause";
     }
     this.play = !this.play;
   }

@@ -63,12 +63,12 @@ section#slider>div#overlay>i {
     font-size: 2em;
 }
 
-section#slider>div#overlay>i.fa-angle-left {
+section#slider>div#overlay>i.la-angle-left {
     left: 0;
     border-radius: 0 75px 75px 0;
 }
 
-section#slider>div#overlay>i.fa-angle-right {
+section#slider>div#overlay>i.la-angle-right {
     right: 0;
     border-radius: 75px 0 0 75px;
 }
@@ -88,7 +88,8 @@ section#slider>div#overlay>i.fa-angle-right {
     height: 500px;;
 }
 
-section#slider>button {
+section#slider>i.btn {
+    color: #002f6c;
     position: absolute;
     display: flex;
     bottom: 0;
@@ -96,8 +97,6 @@ section#slider>button {
     border: none;
     border-radius: 20px;
     padding: 8px 20px;
-    font-weight: bold;
-    color: #002f6c;
     font-size: 24px;
 }
 /*Fin Slider*/

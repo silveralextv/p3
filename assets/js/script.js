@@ -1,4 +1,5 @@
 window.onload = () => {
+
   //Diapo
   const diapo = new Diapo("slider");
 
