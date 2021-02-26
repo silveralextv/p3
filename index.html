@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
   <meta charset="utf-8" />
   <title>Carte interactive de location de vélos</title>
-  <meta author="Alexandre Leclerc" />
+  <meta name="author" content="Alexandre Leclerc" />
   <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
@@ -14,9 +15,9 @@
 
 <body>
   <!--Titre-->
-  <div id=" title">
+  <header id="title">
     <h1>Carte interactive de location de vélos - Lyon</h1>
-  </div>
+  </header>
 
   <!--Timer-->
   <div class="book-timer">
@@ -24,20 +25,20 @@
   </div>
 
   <!--Slider-->
-  <section id="slider">
+  <main id="slider">
     <!--Overlay-->
 
     <!--Images du Slider-->
     <div id="overlay">
       <ul>
         <li class="slider-items" id="item1">
-          <img src="assets/images/cvelo.jpg" />
+          <img src="assets/images/cvelo.jpg" alt=""/>
         </li>
         <li class="slider-items" id="item2">
-          <img src="assets/images/cvelo2.jpg" />
+          <img src="assets/images/cvelo2.jpg" alt=""/>
         </li>
         <li class="slider-items" id="item3">
-          <img src="assets/images/cvelo3.jpg" />
+          <img src="assets/images/cvelo3.jpg" alt=""/>
         </li>
       </ul>
 
@@ -45,13 +46,13 @@
       <i class="la la-angle-right middle-items next"></i>
     </div>
     <i class="las la-pause pause btn"></i>
-  </section>
+  </main>
 
   <!--Carte-->
-  <div class="booking">
+  <footer class="booking">
     <div id="mapid"></div>
     <div id="modal"></div>
-  </div>
+  </footer>
 
   <!--Appels des scripts JS-->
   <script src="assets/js/book.js"></script>
