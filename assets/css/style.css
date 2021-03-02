@@ -1,5 +1,5 @@
 @font-face {
-    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+    src: url("assets/fonts/Roboto/Roboto-Regular.ttf");
     font-family: Roboto;
 }
 
@@ -11,8 +11,9 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #002f6c;
+    color: #fee900;
     font-family: Roboto;
-    background-color: grey;
 }
 
 /*Fin General*/
@@ -65,13 +66,11 @@ h1 {
 #slider>div#overlay>i.la-angle-left {
     left: 0;
     border-radius: 0 75px 75px 0;
-    color: white;
 }
 
 #slider>div#overlay>i.la-angle-right {
     right: 0;
     border-radius: 75px 0 0 75px;
-    color: white;
 }
 
 .middle-items {
@@ -89,40 +88,44 @@ h1 {
     height: 500px;;
 }
 
-#slider>i.btn {
+#slider>i.la-pause {
     position: absolute;
     display: flex;
     bottom: 0;
+    background-color: #fee900;
     border: none;
     border-radius: 20px;
     padding: 8px 20px;
+    font-weight: bold;
+    color: #002f6c;
     font-size: 24px;
-    background-color: red;
 }
 /*Fin Slider*/
 
 .booking {
+    margin-top: 50px;
     display: flex;
-    flex-direction: column;
 }
 
 #mapid {
     height: 300px;
-    width: 100%;
+    width: 50%;
 }
 
-div#modal {
+#modal {
     z-index: 99;
+    width: 50%;
     height: 300px;
     padding-left: 20px;
+    background-color: #00256C;
 }
 
-div#modal>form>h1 {
+#modal>form>h1 {
     padding: 0;
 }
 
 canvas {
-    z-index: 100;
+    z-index: 200;
     border: 1px solid black;
     background-color: white;
     margin: 0;
